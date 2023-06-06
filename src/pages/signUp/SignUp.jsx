@@ -1,15 +1,76 @@
 /* eslint-disable no-unused-vars */
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../../component/SocialLogin";
 import { useForm } from "react-hook-form";
 import registerImg from "../../assets/signup.jpg";
+import { updateProfile } from "firebase/auth";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 const SignUp = () => {
 
+    const {createUser,logOut} = useContext(AuthContext);
+    const navigate = useNavigate();
+    
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-
     const onSubmit = data => {
         console.log(data)
-    }
+        reset();
+        createUser(data.email, data.password)
+            .then(res => {
+                const createdUser = res.user;
+                console.log(createdUser);
+                if (createdUser) {
+
+                    updateProfile(createdUser, {
+                        displayName: data.name, photoURL: data.photo
+                    }).then(() => {
+
+                        const savedUser = { name: data.name, email: data.email }
+                        console.log(savedUser);
+
+                        fetch("http://localhost:5000/users", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify(savedUser)
+                        })
+                            .then(res => res.json())
+                            .then(dt => {
+                                console.log(dt);
+                                if (dt.insertedId) {
+                                    Swal.fire(
+                                        'User created Successfully!',
+                                        'Success!',
+                                        'success'
+                                    )
+
+                                    logOut()
+                                        .then(() => {
+                                            navigate("/signin", { replace: true });
+                                        })
+                                        .catch(er => console.log(er))
+                                }
+                            })
+                            .catch(er => console.log(er.message))
+                    }).catch((error) => {
+
+                    });
+
+                }
+                else {
+                    return;
+                }
+            })
+            .catch(er => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                })
+            })
+    };
 
     return (
         <div>
