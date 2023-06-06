@@ -55,7 +55,7 @@ const SignUp = () => {
                             })
                             .catch(er => console.log(er.message))
                     }).catch((error) => {
-
+                        console.log(error.message);
                     });
 
                 }
@@ -74,7 +74,7 @@ const SignUp = () => {
 
     return (
         <div>
-            <div className='' >
+            <div className='mt-5' >
                 <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center items-center gap-5 p-2">
                     <div className="card w-full max-w-2xl drop-shadow-2xl bg-base-100 order-2 md:order-1" data-aos="fade-up" data-aos-duration="3000">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">

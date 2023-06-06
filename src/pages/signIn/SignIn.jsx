@@ -1,18 +1,52 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
-import {Link} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import { useForm } from "react-hook-form";
 import SocialLogin from "../../component/SocialLogin";
 import login from "../../assets/signin.jpg";
+import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 
 const SignIn = () => {
 
+    const {signInUser} = useContext(AuthContext);
+
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
+
     const onSubmit = data => {
-        console.log(data)
+        console.log(data);
+
+        signInUser(data.email, data.password)
+            .then(res => {
+                const logedUser = res.user;
+                console.log(logedUser);
+                if (logedUser) {
+                    Swal.fire(
+                        'Successfully Loged In!',
+                        'Success!',
+                        'success'
+                    )
+                    navigate(from, { replace: true });
+                }
+                else {
+                    return;
+                }
+            })
+            .catch(er => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                })
+            })
     };
 
     return (
