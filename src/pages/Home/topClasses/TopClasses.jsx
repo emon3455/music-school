@@ -26,13 +26,6 @@ const TopClasses = () => {
 
                         <div className="card-body">
                             <h2 className="card-title">{classItem.name}</h2>
-                            {/* <div className="flex justify-between w-full">
-                            <p>Total Student: {classItem.totalStudents}</p>
-                            <p>Available Sits: {classItem.availableSeats}</p>
-                            </div>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-info font-bold" disabled={classItem.availableSeats==0}>Select</button>
-                            </div> */}
                         </div>
 
                     </div>)

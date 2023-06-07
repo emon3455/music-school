@@ -24,13 +24,6 @@ const TopInstructors = () => {
 
                         <div className="card-body">
                             <h2 className="card-title">{teacher.name}</h2>
-                            {/* <div className="flex justify-between w-full">
-                            <p>Total Student: {teacher.totalStudents}</p>
-                            <p>Available Sits: {teacher.availableSeats}</p>
-                            </div>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-info font-bold" disabled={teacher.availableSeats==0}>Select</button>
-                            </div> */}
                         </div>
 
                     </div>)

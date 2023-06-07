@@ -28,7 +28,7 @@ const Navbar = () => {
             user
                 ?
                 <>
-                    <li><Link to="/">Dashboard</Link></li>
+                    <li><Link to="/dashboard">Dashboard</Link></li>
                     <li><span onClick={handleLogout} className="bg-warning rounded-xl font-bold py-0 my-auto btn-sm">Logout</span></li>
                 </>
                 :
