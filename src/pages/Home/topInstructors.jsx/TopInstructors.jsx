@@ -14,7 +14,7 @@ const TopInstructors = () => {
     return (
         <div className="p-2 my-5">
 
-            <h2 className="text-4xl text-center my-5 text-violet-500 font-bold">OUR Top Instructors</h2>
+            <h2 className="text-4xl text-center my-5 text-violet-500 font-bold">Our Top Instructors</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
                 {
