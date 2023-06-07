@@ -50,7 +50,7 @@ const SignIn = () => {
     };
 
     return (
-        <div className='mt-5' >
+        <div className='my-5' >
             <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center items-center gap-5 p-2">
                 <div className="card w-full max-w-md drop-shadow-2xl bg-base-100 order-2 md:order-1" data-aos="fade-right" data-aos-duration="3000">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
