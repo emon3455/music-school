@@ -23,12 +23,12 @@ const Classes = () => {
 
                         <figure><img src={classItem.image} alt="Shoes" /></figure>
 
-                        <div className="card-body">
+                        <div className="card-body w-full">
                             <h2 className="card-title">{classItem.name}</h2>
 
                             <div className="grid grid-cols-2 text-lg">
-                            <p>Course Teacher: {classItem.instructor}</p>
-                            <p>Course Fee: {classItem.price}</p>
+                            <p>Teacher: {classItem.instructor}</p>
+                            <p>Cost: {classItem.price}</p>
                             <p>Total Student: {classItem.totalStudents}</p>
                             <p>Available Sits: {classItem.availableSeats}</p>
                             </div>
