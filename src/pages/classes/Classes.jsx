@@ -1,4 +1,5 @@
 
+import { Helmet } from "react-helmet-async";
 import useClasses from "../../hooks/useClasses";
 
 const Classes = () => {
@@ -6,7 +7,10 @@ const Classes = () => {
     const [classes] = useClasses();
 
     return (
-       <div className="p-2 my-5">
+        <div className="p-2 my-5">
+            <Helmet>
+                <title>Music Scholling | Classes</title>
+            </Helmet>
 
             <h2 className="text-4xl text-center my-5 text-violet-500 font-bold">Our Classes</h2>
 
@@ -20,16 +24,16 @@ const Classes = () => {
                             <h2 className="card-title">{classItem.name}</h2>
 
                             <div className="grid grid-cols-2 text-lg">
-                            <p>Teacher: {classItem.instructor}</p>
-                            <p>Cost: {classItem.price}</p>
-                            <p>Total Student: {classItem.totalStudents}</p>
-                            <p>Available Sits: {classItem.availableSeats}</p>
+                                <p>Teacher: {classItem.instructor}</p>
+                                <p>Cost: {classItem.price}</p>
+                                <p>Total Student: {classItem.totalStudents}</p>
+                                <p>Available Sits: {classItem.availableSeats}</p>
                             </div>
 
                             <div className="flex justify-between w-full">
                             </div>
                             <div className="card-actions justify-end">
-                                <button className="btn btn-info font-bold" disabled={classItem.availableSeats==0}>Select</button>
+                                <button className="btn btn-info font-bold" disabled={classItem.availableSeats == 0}>Select</button>
                             </div>
                         </div>
 

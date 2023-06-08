@@ -1,18 +1,19 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
-import {Link, useLocation, useNavigate} from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import SocialLogin from "../../component/SocialLogin";
 import login from "../../assets/signin.jpg";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 
 const SignIn = () => {
 
-    const {signInUser} = useContext(AuthContext);
+    const { signInUser } = useContext(AuthContext);
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
@@ -51,6 +52,9 @@ const SignIn = () => {
 
     return (
         <div className='my-5' >
+            <Helmet>
+                <title>Music Scholling | SignIn</title>
+            </Helmet>
             <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center items-center gap-5 p-2">
                 <div className="card w-full max-w-md drop-shadow-2xl bg-base-100 order-2 md:order-1" data-aos="fade-right" data-aos-duration="3000">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -78,7 +82,7 @@ const SignIn = () => {
                             {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one Uppercase one lower case, one number and one special character.</p>}
                         </div>
 
-                        <input type="submit" value="Login" className="btn btn-info mt-2 text-white font-semibold"  />
+                        <input type="submit" value="Login" className="btn btn-info mt-2 text-white font-semibold" />
 
                     </form>
                     <div className="px-4 pb-2">
@@ -88,7 +92,7 @@ const SignIn = () => {
                         <div className="divider"><span className="text-red-400 font-bold">OR Continue With</span></div>
 
                         <SocialLogin></SocialLogin>
-                        
+
                     </div>
 
                 </div>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const Instructors = () => {
 
@@ -13,6 +14,9 @@ const Instructors = () => {
 
     return (
         <div className="p-2 my-5">
+            <Helmet>
+                <title>Music Scholling | Instructors</title>
+            </Helmet>
 
             <h2 className="text-4xl text-center my-5 text-violet-500 font-bold">Our Instructors</h2>
 

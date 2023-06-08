@@ -7,11 +7,12 @@ import { updateProfile } from "firebase/auth";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 const SignUp = () => {
 
-    const {createUser,logOut} = useContext(AuthContext);
+    const { createUser, logOut } = useContext(AuthContext);
     const navigate = useNavigate();
-    
+
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
@@ -75,6 +76,9 @@ const SignUp = () => {
     return (
         <div>
             <div className='my-5'>
+                <Helmet>
+                    <title>Music Scholling | SignUp</title>
+                </Helmet>
                 <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center items-center gap-5 p-2">
                     <div className="card w-full max-w-2xl drop-shadow-2xl bg-base-100 order-2 md:order-1" data-aos="fade-up" data-aos-duration="3000">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">

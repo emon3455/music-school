@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -33,12 +33,13 @@ const Navbar = () => {
                 </>
                 :
                 <li><Link to="/signin">Sign In</Link></li>
+
         }
     </>
 
     return (
         <>
-            <div className="navbar mx-auto sticky z-20 bg-black text-white bg-opacity-60">
+            <div className="navbar mx-auto sticky bg-black text-white z-20 bg-opacity-60">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost xl:hidden">
@@ -53,7 +54,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     <div className="hidden xl:flex">
-                        <ul className="menu space-x-2 menu-horizontal px-1">
+                        <ul className="menu space-x-2 text-lg menu-horizontal px-1">
                             {navMenu}
                         </ul>
                     </div>
