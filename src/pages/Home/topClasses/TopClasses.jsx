@@ -11,7 +11,6 @@ const TopClasses = () => {
             .catch(er => console.log(er.message))
     }, [])
 
-    console.log(classes);
 
     return (
         <div className="p-2 my-5">
