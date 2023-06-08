@@ -9,7 +9,7 @@ import Dashboard from "../layout/DashBoard";
 import PrivateRoutes from "../privateRoutes/PrivateRoutes";
 import ManageClasses from "../pages/dashboard/manageClasses/ManageClasses";
 import ManageUsers from "../pages/dashboard/manageUsers/ManageUsers";
-// import AdminRoute from "../privateRoutes/AdminRoute";
+import AdminRoute from "../privateRoutes/AdminRoute";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -44,12 +44,12 @@ const router = createBrowserRouter([
         // admin routes start:
         {
           path: "manageUsers",
-          element: <ManageUsers></ManageUsers>
-          // element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
+          // element: <ManageUsers></ManageUsers>
+          element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
         },
         {
           path: "manageClasses",
-          element: <ManageClasses></ManageClasses>
+          element: <AdminRoute><ManageClasses></ManageClasses></AdminRoute>
           // element: <ManageClasses></ManageClasses>
         }
       ]

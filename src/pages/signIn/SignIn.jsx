@@ -28,7 +28,6 @@ const SignIn = () => {
         signInUser(data.email, data.password)
             .then(res => {
                 const logedUser = res.user;
-                console.log(logedUser);
                 if (logedUser) {
                     Swal.fire(
                         'Successfully Loged In!',
