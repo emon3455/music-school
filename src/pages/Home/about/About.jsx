@@ -9,7 +9,7 @@ const About = () => {
             <h4 className="text-4xl font-extrabold text-violet-500 text-center">About US</h4>
 
             <div className="grid grid-cols-1  md:grid-cols-2 justify-center items-center mt-0 gap-5" >
-                <div className="order-2 md:order-1" data-aos="zoom-in-down" data-aos-easing="linear" data-aos-duration="1500">
+                <div className="order-2 md:order-1">
 
                     <h2 className="text-4xl font-bold my-7">Music Scholling BD</h2>
                     <p className="font-medium text-gray-700 mb-5 text-justify">
@@ -17,12 +17,12 @@ const About = () => {
                     </p>
 
                 </div>
-                <div className="w-full h-96 order-1" data-aos="flip-up" data-aos-easing="linear" data-aos-duration="500">
+                <div className="w-full h-96 order-1">
                     <Lottie className="w-full h-full" animationData={about} loop={true} />
                 </div>
             </div>
 
-            <div className="my-5 rounded-xl shadow-2xl mx-auto max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+            <div className="my-5 rounded-xl shadow-2xl mx-auto max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" >
 
                 <div className="p-2 border-b-2 md:border-r-2">
                     <div className="stat-figure text-primary">

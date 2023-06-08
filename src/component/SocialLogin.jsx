@@ -17,7 +17,7 @@ const SocialLogin = () => {
         signInWithGoggle()
             .then(res => {
                 const logedUser = res.user;
-                const savedUser = { name: logedUser.displayName , email: logedUser.email}
+                const savedUser = { name: logedUser.displayName , email: logedUser.email, role:"student" }
                 
                 fetch("http://localhost:5000/users", {
                     method: "POST",

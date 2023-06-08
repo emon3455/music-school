@@ -56,7 +56,7 @@ const SignIn = () => {
                 <title>Music Scholling | SignIn</title>
             </Helmet>
             <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center items-center gap-5 p-2">
-                <div className="card w-full max-w-md drop-shadow-2xl bg-base-100 order-2 md:order-1" data-aos="fade-right" data-aos-duration="3000">
+                <div className="card w-full max-w-md drop-shadow-2xl bg-base-100 order-2 md:order-1">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <h2 className="text-3xl font-bold text-center text-violet-700">Sign in</h2>
                         <div className="form-control">
@@ -96,11 +96,10 @@ const SignIn = () => {
                     </div>
 
                 </div>
-                <div className="max-w-lg order-1 md:order-2" data-aos="fade-left" data-aos-duration="3000">
+                <div className="max-w-lg order-1 md:order-2">
                     <img className="w-full" src={login} alt="login image" />
                 </div>
             </div>
-
 
         </div>
     );

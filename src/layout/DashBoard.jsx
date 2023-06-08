@@ -1,28 +1,63 @@
 
+import { FaBars, FaColumns, FaElementor, FaFileSignature, FaHouseUser, FaUserCog } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
+import useAdmin from '../hooks/useAdmin';
+import useInstructors from '../hooks/useInstructor';
 
 const DashBoard = () => {
+
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructors();
+
     return (
         <div>
             <div className="drawer z-30">
                 <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content">
+                <div className="drawer-content z-10">
 
+                    <label htmlFor="my-drawer" className="btn btn-primary bg-slate-950 text-white text-xl drawer-button w-full">Open Menu <FaBars></FaBars> </label>
                     <Outlet></Outlet>
-                    <label htmlFor="my-drawer" className="btn btn-warning text-black drawer-button w-full">Open Menu</label>
 
                 </div>
-                
-                <div className="drawer-side">
+
+                <div className="drawer-side z-50">
                     <label htmlFor="my-drawer" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+                    <ul className="menu p-4 w-2/3 lg:w-1/4  h-full bg-base-200 text-base-content">
                         {/* Sidebar content here */}
-                        <li>
-                            <Link to="">menu 1</Link>
+                        <li className='text-xl mb-5 font-extrabold'>
+                            <Link to="/">Music Scholling BD <FaHouseUser></FaHouseUser> </Link>
                         </li>
-                        <li>
-                            <Link to="">menu 2</Link>
-                        </li>
+                        {
+                            isAdmin
+
+                                ?
+                                <>
+                                    <li>
+                                        <Link to="/dashboard/manageUsers"> <FaUserCog></FaUserCog> Manage Users </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/dashboard/manageClasses"> <FaElementor></FaElementor> Manage Classes </Link>
+                                    </li>
+                                </>
+                                :
+                                <>
+                                    {
+                                        isInstructor
+                                            ?
+                                            <>
+                                                <li>
+                                                    <Link to="/dashboard/manageUsers"> <FaFileSignature></FaFileSignature> Add Class </Link>
+                                                </li>
+                                            </>
+                                            :
+                                            <>
+                                                <li>
+                                                    <Link to="/dashboard/manageUsers"> <FaColumns></FaColumns> My Class </Link>
+                                                </li>
+                                            </>
+                                    }
+                                </>
+                        }
 
                     </ul>
                 </div>

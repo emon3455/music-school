@@ -27,7 +27,7 @@ const SignUp = () => {
                         displayName: data.name, photoURL: data.photo
                     }).then(() => {
 
-                        const savedUser = { name: data.name, email: data.email }
+                        const savedUser = { name: data.name, email: data.email, role:"student" }
                         console.log(savedUser);
 
                         fetch("http://localhost:5000/users", {
@@ -80,7 +80,7 @@ const SignUp = () => {
                     <title>Music Scholling | SignUp</title>
                 </Helmet>
                 <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center items-center gap-5 p-2">
-                    <div className="card w-full max-w-2xl drop-shadow-2xl bg-base-100 order-2 md:order-1" data-aos="fade-up" data-aos-duration="3000">
+                    <div className="card w-full max-w-2xl drop-shadow-2xl bg-base-100 order-2 md:order-1">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <h2 className="text-3xl font-bold text-center text-violet-600">Sign Up</h2>
 
@@ -136,7 +136,7 @@ const SignUp = () => {
                         </div>
 
                     </div>
-                    <div className="max-w-lg order-1 md:order-2" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="3000">
+                    <div className="max-w-lg order-1 md:order-2">
                         <img className="w-full" src={registerImg} alt="login image" />
                     </div>
                 </div>

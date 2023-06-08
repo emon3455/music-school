@@ -16,7 +16,7 @@ const Classes = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
                 {
-                    classes.map(classItem => <div key={classItem._id} className="card card-compact bg-base-100 shadow-xl">
+                    classes.map(classItem => <div key={classItem._id} className={`card card-compact ${classItem.availableSeats === 0 ? "bg-red-200" : "bg-base-100" } shadow-xl`}>
 
                         <figure><img src={classItem.image} alt="Shoes" /></figure>
 
