@@ -1,16 +1,9 @@
-import { useEffect, useState } from "react";
+
+import useClasses from "../../hooks/useClasses";
 
 const Classes = () => {
 
-    const [classes, setClasses] = useState([]);
-
-    useEffect(() => {
-        fetch("http://localhost:5000/classes")
-            .then(res => res.json())
-            .then(data => setClasses(data))
-            .catch(er => console.log(er.message))
-    }, [])
-
+    const [classes] = useClasses();
 
     return (
        <div className="p-2 my-5">

@@ -6,6 +6,7 @@ import SignUp from "../pages/signUp/SignUp";
 import Instructors from "../pages/instructors/Instructors";
 import Classes from "../pages/classes/Classes";
 import Dashboard from "../layout/DashBoard";
+import PrivateRoutes from "../privateRoutes/PrivateRoutes";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
     },
     {
       path: "/dashboard",
-      element: <Dashboard></Dashboard>
+      element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>
     }
 ]);
 
