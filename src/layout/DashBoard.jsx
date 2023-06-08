@@ -1,13 +1,16 @@
 
 import { FaBars, FaColumns, FaElementor, FaFileSignature, FaHouseUser, FaUserCog } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
-import useAdmin from '../hooks/useAdmin';
-import useInstructors from '../hooks/useInstructor';
+// import useAdmin from '../hooks/useAdmin';
+// import useInstructors from '../hooks/useInstructor';
 
 const DashBoard = () => {
 
-    const [isAdmin] = useAdmin();
-    const [isInstructor] = useInstructors();
+    // const [isAdmin] = useAdmin();
+    // const [isInstructor] = useInstructors();
+
+    const isAdmin = true;
+    const isInstructor = false;
 
     return (
         <div>

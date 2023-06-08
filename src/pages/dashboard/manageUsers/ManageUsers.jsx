@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 
 const ManageUsers = () => {
-    const { user } = useContext(AuthContext);
+    
     const [axiosSecure] = useAxiosSecure();
 
     const { data: users = [], refetch } = useQuery(['users'], async () => {
