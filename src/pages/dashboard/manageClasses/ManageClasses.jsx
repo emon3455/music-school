@@ -1,25 +1,18 @@
 /* eslint-disable no-unused-vars */
-import { useContext, useState } from "react";
-import { AuthContext } from "../../../providers/AuthProvider";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import useClasses from "../../../hooks/useClasses";
-import SendFeedBack from "./SendFeedBack";
 import { Link } from "react-router-dom";
 
 const ManageClasses = () => {
 
     const [classes, refetch] = useClasses();
+    const [axiosSecure] = useAxiosSecure();
 
     const handleApprovedClass = (cls) => {
-        fetch(`http://localhost:5000/classes/approved/${cls._id}`, {
-            method: "PATCH",
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.modifiedCount > 0) {
+        axiosSecure.patch(`/classes/approved/${cls._id}`)
+            .then(res => {
+                if (res.data.modifiedCount > 0) {
                     refetch();
                     Swal.fire({
                         icon: 'success',
@@ -29,16 +22,13 @@ const ManageClasses = () => {
                 }
             })
             .catch(er => console.log(er.message))
+
     }
 
     const handleDenyClass = (cls) => {
-        fetch(`http://localhost:5000/classes/deny/${cls._id}`, {
-            method: "PATCH",
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.modifiedCount > 0) {
+        axiosSecure.patch(`/classes/deny/${cls._id}`)
+            .then(res=> {
+                if (res.data.modifiedCount > 0) {
                     refetch();
                     Swal.fire({
                         icon: 'warning',

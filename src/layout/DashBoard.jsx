@@ -49,13 +49,16 @@ const DashBoard = () => {
                                             ?
                                             <>
                                                 <li>
-                                                    <Link to="/dashboard/manageUsers"> <FaFileSignature></FaFileSignature> Add Class </Link>
+                                                    <Link to="/dashboard/addClass"> <FaFileSignature></FaFileSignature> Add Class </Link>
+                                                </li>
+                                                <li>
+                                                    <Link to="/dashboard/myClass"> <FaFileSignature></FaFileSignature> My Class </Link>
                                                 </li>
                                             </>
                                             :
                                             <>
                                                 <li>
-                                                    <Link to="/dashboard/manageUsers"> <FaColumns></FaColumns> My Class </Link>
+                                                    <Link to="/dashboard/manageUsers"> <FaColumns></FaColumns> classroom </Link>
                                                 </li>
                                             </>
                                     }

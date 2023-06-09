@@ -15,13 +15,10 @@ const ManageUsers = () => {
     })
 
     const handleMakeAdmin = (user) => {
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
-            method: "PATCH",
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.modifiedCount > 0) {
+
+        axiosSecure.patch(`/users/admin/${user._id}`)
+            .then(res =>{
+                if (res.data.modifiedCount > 0) {
                     refetch();
                     Swal.fire({
                         icon: 'success',
@@ -31,16 +28,15 @@ const ManageUsers = () => {
                 }
             })
             .catch(er => console.log(er.message))
+
+        
     }
 
     const handleMakeInstructor = (user) => {
-        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
-            method: "PATCH",
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.modifiedCount > 0) {
+
+        axiosSecure.patch(`/users/instructor/${user._id}`)
+            .then(res => {
+                if (res.data.modifiedCount > 0) {
                     refetch();
                     Swal.fire({
                         icon: 'success',

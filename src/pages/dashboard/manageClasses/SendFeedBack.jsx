@@ -21,11 +21,13 @@ const SendFeedBack = () => {
         e.preventDefault();
         const text = e.target.text.value;
         console.log(text);
+        const token = localStorage.getItem('access-token');
 
         fetch(`http://localhost:5000/classes/feedback/${cls?._id}`, {
             method: "PATCH",
             headers:{
                 "Content-Type":"application/json",
+                authorization: `Bearer ${token}`
             },
             body: JSON.stringify({ feedback: text })
         })
