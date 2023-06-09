@@ -10,6 +10,7 @@ import PrivateRoutes from "../privateRoutes/PrivateRoutes";
 import ManageClasses from "../pages/dashboard/manageClasses/ManageClasses";
 import ManageUsers from "../pages/dashboard/manageUsers/ManageUsers";
 import AdminRoute from "../privateRoutes/AdminRoute";
+import SendFeedBack from "../pages/dashboard/manageClasses/SendFeedBack";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
           path: "manageClasses",
           element: <AdminRoute><ManageClasses></ManageClasses></AdminRoute>
           // element: <ManageClasses></ManageClasses>
+        },
+        {
+          path: "manageClasses/classes/:id",
+          element: <AdminRoute><SendFeedBack></SendFeedBack></AdminRoute>,
         }
       ]
     }

@@ -1,14 +1,16 @@
 /* eslint-disable no-unused-vars */
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import useClasses from "../../../hooks/useClasses";
+import SendFeedBack from "./SendFeedBack";
+import { Link } from "react-router-dom";
 
 const ManageClasses = () => {
 
-    const [ classes , refetch] = useClasses();
+    const [classes, refetch] = useClasses();
 
     const handleApprovedClass = (cls) => {
         fetch(`http://localhost:5000/classes/approved/${cls._id}`, {
@@ -49,8 +51,10 @@ const ManageClasses = () => {
     }
 
 
+
     return (
         <div className="w-full">
+
             <h2 className="text-4xl font-bold text-red-400 my-5 text-center">Manage Classes</h2>
 
             <div className="overflow-x-auto w-full mx-auto">
@@ -88,9 +92,10 @@ const ManageClasses = () => {
                                 <td>${cls.price}</td>
                                 <td>{cls.status}</td>
                                 <td className="space-x-2 text-center">
-                                    <button onClick={()=>handleApprovedClass(cls)} className="btn btn-primary btn-sm" disabled={cls.status == "approved" || cls.status == "deny"}>Approve</button>
-                                    <button onClick={()=>handleDenyClass(cls)} className="btn btn-warning btn-sm" disabled={cls.status == "approved" || cls.status == "deny"}>Deny</button>
-                                    <button className="btn btn-info btn-sm">FeedBack</button>
+                                    <button onClick={() => handleApprovedClass(cls)} className="btn btn-primary btn-sm" disabled={cls.status == "approved" || cls.status == "deny"}>Approve</button>
+                                    <button onClick={() => handleDenyClass(cls)} className="btn btn-warning btn-sm" disabled={cls.status == "approved" || cls.status == "deny"}>Deny</button>
+                                    <Link to={`classes/${cls._id}`} className="btn btn-info btn-sm">Feedback</Link>
+                                    
                                 </td>
                             </tr>)
                         }
