@@ -14,6 +14,7 @@ import SendFeedBack from "../pages/dashboard/manageClasses/SendFeedBack";
 import AddClass from "../pages/dashboard/addClass/AddClass";
 import MyClass from "../pages/dashboard/myClass/MyClass";
 import InstructorRoute from "../privateRoutes/InstructorRoute";
+import UpdateMyClass from "../pages/dashboard/myClass/UpdateMyClass";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -65,7 +66,11 @@ const router = createBrowserRouter([
         },
         {
           path: "myClass",
-          element: <MyClass></MyClass>
+          element: <InstructorRoute><MyClass></MyClass></InstructorRoute>
+        },
+        {
+          path: "myClass/singleClass/:id",
+          element: <InstructorRoute><UpdateMyClass></UpdateMyClass></InstructorRoute>
         }
       ]
     }
