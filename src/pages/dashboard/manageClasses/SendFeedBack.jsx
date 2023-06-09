@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const SendFeedBack = () => {
@@ -15,8 +16,34 @@ const SendFeedBack = () => {
             .then(data => setCls(data))
     }, [params])
 
-    console.log(cls);
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const text = e.target.text.value;
+        console.log(text);
+
+        fetch(`http://localhost:5000/classes/feedback/${cls?._id}`, {
+            method: "PATCH",
+            headers:{
+                "Content-Type":"application/json",
+            },
+            body: JSON.stringify({ feedback: text })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Succussfully Done',
+                        text: `FeedBack Send To ${cls.instructorName}!!`,
+                    })
+                    e.target.reset();
+                }
+            })
+            .catch(err => console.log(err.message))
+
+    }
 
     return (
         <div className="">
@@ -25,15 +52,19 @@ const SendFeedBack = () => {
                 cls
                     ?
                     <>
-                        <h2>Send Feedback To: {cls.instructorName}</h2>
+                        <h2 className="text-3xl mt-5 text-violet-600 font-bold text-center ">Send Feedback To Instructor: {cls.instructorName}</h2>
 
-                        <div className="card max-w-4xl bg-base-100 shadow-xl">
-                            <form className="card-body">
-                                <h2 className="card-title">Send Feedback</h2>
-                                <p>If a dog chews shoes whose shoes does he choose?</p>
-                                <div className="card-actions justify-end">
-                                    <button className="btn btn-primary">Buy Now</button>
+                        <div className="card mx-auto my-5 max-w-4xl bg-base-100 shadow-2xl">
+                            <form onSubmit={handleSubmit} className="card-body">
+                                <h2 className="text-2xl text-center font-bold">Send Feedback!!</h2>
+                                <p className="text-xl font-semibold">FeedBack on: {cls.name}</p>
+
+                                <textarea name="text" required className="textarea textarea-info w-full" placeholder="Feedback"></textarea>
+
+                                <div className="">
+                                    <input className="btn btn-info" type="submit" value="Send" />
                                 </div>
+
                             </form>
                         </div>
                     </>
