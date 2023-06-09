@@ -4,9 +4,10 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const ManageUsers = () => {
-    
+
     const [axiosSecure] = useAxiosSecure();
 
     const { data: users = [], refetch } = useQuery(['users'], async () => {
@@ -17,7 +18,7 @@ const ManageUsers = () => {
     const handleMakeAdmin = (user) => {
 
         axiosSecure.patch(`/users/admin/${user._id}`)
-            .then(res =>{
+            .then(res => {
                 if (res.data.modifiedCount > 0) {
                     refetch();
                     Swal.fire({
@@ -29,7 +30,7 @@ const ManageUsers = () => {
             })
             .catch(er => console.log(er.message))
 
-        
+
     }
 
     const handleMakeInstructor = (user) => {
@@ -50,6 +51,9 @@ const ManageUsers = () => {
 
     return (
         <div className="w-full">
+            <Helmet>
+                <title>Music Scholling | Manage Users</title>
+            </Helmet>
             <h2 className="text-4xl font-bold text-red-400 my-5 text-center">Manage All Users</h2>
 
             <div className="overflow-x-auto w-full xl:w-4/5 mx-auto">

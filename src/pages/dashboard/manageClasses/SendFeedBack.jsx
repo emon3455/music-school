@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -25,8 +26,8 @@ const SendFeedBack = () => {
 
         fetch(`http://localhost:5000/classes/feedback/${cls?._id}`, {
             method: "PATCH",
-            headers:{
-                "Content-Type":"application/json",
+            headers: {
+                "Content-Type": "application/json",
                 authorization: `Bearer ${token}`
             },
             body: JSON.stringify({ feedback: text })
@@ -49,6 +50,9 @@ const SendFeedBack = () => {
 
     return (
         <div className="">
+            <Helmet>
+                <title>Music Scholling | Send FeedBack</title>
+            </Helmet>
 
             {
                 cls

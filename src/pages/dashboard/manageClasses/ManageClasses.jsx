@@ -3,6 +3,7 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import useClasses from "../../../hooks/useClasses";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const ManageClasses = () => {
 
@@ -27,7 +28,7 @@ const ManageClasses = () => {
 
     const handleDenyClass = (cls) => {
         axiosSecure.patch(`/classes/deny/${cls._id}`)
-            .then(res=> {
+            .then(res => {
                 if (res.data.modifiedCount > 0) {
                     refetch();
                     Swal.fire({
@@ -44,6 +45,10 @@ const ManageClasses = () => {
 
     return (
         <div className="w-full">
+
+            <Helmet>
+                <title>Music Scholling | Manage Classes</title>
+            </Helmet>
 
             <h2 className="text-4xl font-bold text-red-400 my-5 text-center">Manage Classes</h2>
 
@@ -85,7 +90,7 @@ const ManageClasses = () => {
                                     <button onClick={() => handleApprovedClass(cls)} className="btn btn-primary btn-sm" disabled={cls.status == "approved" || cls.status == "deny"}>Approve</button>
                                     <button onClick={() => handleDenyClass(cls)} className="btn btn-warning btn-sm" disabled={cls.status == "approved" || cls.status == "deny"}>Deny</button>
                                     <Link to={`classes/${cls._id}`} className="btn btn-info btn-sm">Feedback</Link>
-                                    
+
                                 </td>
                             </tr>)
                         }

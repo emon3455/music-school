@@ -13,6 +13,7 @@ import AdminRoute from "../privateRoutes/AdminRoute";
 import SendFeedBack from "../pages/dashboard/manageClasses/SendFeedBack";
 import AddClass from "../pages/dashboard/addClass/AddClass";
 import MyClass from "../pages/dashboard/myClass/MyClass";
+import InstructorRoute from "../privateRoutes/InstructorRoute";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -60,7 +61,7 @@ const router = createBrowserRouter([
         // instructor routes start:
         {
           path: "addClass",
-          element: <AddClass></AddClass>
+          element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
         },
         {
           path: "myClass",
