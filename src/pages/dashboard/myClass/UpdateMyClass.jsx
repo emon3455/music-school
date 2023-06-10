@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -70,6 +71,9 @@ const UpdateMyClass = () => {
     return (
 
         <div>
+            <Helmet>
+                <title>Music Scholling | Update Classes</title>
+            </Helmet>
 
             {
                 cls

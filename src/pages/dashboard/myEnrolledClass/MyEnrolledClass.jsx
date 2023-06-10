@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import useEnrolledClass from "../../../hooks/useEnrolledClass";
 
 const MyEnrolledClass = () => {
@@ -6,6 +7,9 @@ const MyEnrolledClass = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Music Scholling | My Enrolled Class</title>
+            </Helmet>
             <h2 className="text-4xl font-bold my-5">Your Enrolled Class</h2> 
             <div className="overflow-x-auto w-full lg:w-2/3  mt-10 mx-auto">
                 <table className="table table-zebra">

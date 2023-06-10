@@ -29,7 +29,7 @@ const MyClass = () => {
 
             <h2 className="text-4xl text-center font-extrabold text-red-500 mt-5">My Classes {myClasses.length}</h2>
 
-            <div className="mt-5 overflow-x-auto w-full mx-auto">
+            <div className="mt-5 overflow-x-auto w-full lg:w-4/5 mx-auto">
                 <table className="table table-zebra">
                     {/* head */}
                     <thead>

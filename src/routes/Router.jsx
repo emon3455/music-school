@@ -19,10 +19,13 @@ import MySelectedClass from "../pages/dashboard/mySeledtedClass/MySelectedClass"
 import MyEnrolledClass from "../pages/dashboard/myEnrolledClass/MyEnrolledClass";
 import Payment from "../pages/dashboard/payment/Payment";
 import PaymentHistory from "../pages/dashboard/paymentHistory/PaymentHistory";
+import DashboardHome from "../pages/dashboard/home/DashboardHome";
+import Error from "../pages/error/Error";
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement: <Error></Error>,
       children:[
         {
             path: "/",
@@ -49,7 +52,12 @@ const router = createBrowserRouter([
     {
       path: "/dashboard",
       element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
-      children:[
+      errorElement: <Error></Error>,
+      children:[       
+        {
+          path: "home",
+          element: <DashboardHome></DashboardHome>
+        },
         // admin routes start:
         {
           path: "manageUsers",

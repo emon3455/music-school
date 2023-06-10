@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useSelectedClass from "../../../hooks/useSelectedClass";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const MySelectedClass = () => {
 
@@ -41,6 +42,9 @@ const MySelectedClass = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Music Scholling | My Selected Class</title>
+            </Helmet>
             <h2 className="text-3xl font-extrabold text-center mt-5 text-red-500">My Selected Class</h2>
 
             <div className="overflow-x-auto w-full mt-10 mx-auto">

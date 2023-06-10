@@ -28,11 +28,11 @@ const Navbar = () => {
             user
                 ?
                 <>
-                    <li><Link to="/dashboard">Dashboard</Link></li>
-                    <li><button onClick={handleLogout} className="bg-warning font-bold">Logout</button></li>
+                    <li><Link to="/dashboard/home">Dashboard</Link></li>
+                    <li><button onClick={handleLogout} className="bg-warning font-bold hover:bg-info">Logout</button></li>
                 </>
                 :
-                <li ><Link className="bg-warning" to="/signin">Sign In</Link></li>
+                <li ><Link className="bg-warning hover:bg-info" to="/signin">Sign In</Link></li>
 
         }
     </>

@@ -1,16 +1,14 @@
 
-import { FaBars, FaColumns, FaElementor, FaFileSignature, FaGitter, FaHouseUser, FaScroll, FaUserCog } from 'react-icons/fa';
+import { FaBars, FaColumns, FaElementor, FaFileSignature, FaGitter, FaHouseUser, FaIdBadge, FaMusic, FaScroll, FaUserCog, FaUserGraduate } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
 import useAdmin from '../hooks/useAdmin';
 import useInstructors from '../hooks/useInstructor';
+import Footer from '../component/Footer';
 
 const DashBoard = () => {
 
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructors();
-
-    // const isAdmin = true;
-    // const isInstructor = false;
 
     return (
         <div>
@@ -18,23 +16,31 @@ const DashBoard = () => {
                 <input id="my-drawer" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content z-10">
 
-                    <label htmlFor="my-drawer" className="btn btn-primary bg-slate-950 text-white text-xl drawer-button w-full">Open Menu <FaBars></FaBars> </label>
+                    <label htmlFor="my-drawer" className="btn hover:bg-slate-800 bg-slate-900 text-white text-xl drawer-button w-full">Open Menu <FaBars></FaBars> </label>
                     <Outlet></Outlet>
+                    <Footer></Footer>
 
                 </div>
 
                 <div className="drawer-side z-50">
                     <label htmlFor="my-drawer" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-2/3 lg:w-1/4  h-full bg-base-200 text-base-content">
+                    <ul className="menu p-4 w-2/3 lg:w-1/4 text-lg space-y-2 h-full bg-base-200 text-base-content">
                         {/* Sidebar content here */}
+
                         <li className='text-xl mb-5 font-extrabold'>
-                            <Link to="/">Music Scholling BD <FaHouseUser></FaHouseUser> </Link>
+                            <Link> Music Scholling BD </Link>
                         </li>
+                        <hr />
+
                         {
+
                             isAdmin
 
                                 ?
                                 <>
+                                    <li>
+                                        <Link to="/dashboard/home"> <FaHouseUser></FaHouseUser> Home </Link>
+                                    </li>
                                     <li>
                                         <Link to="/dashboard/manageUsers"> <FaUserCog></FaUserCog> Manage Users </Link>
                                     </li>
@@ -49,23 +55,45 @@ const DashBoard = () => {
                                             ?
                                             <>
                                                 <li>
-                                                    <Link to="/dashboard/addClass"> <FaFileSignature></FaFileSignature> Add Class </Link>
+                                                    <Link to="/dashboard/home"> <FaHouseUser></FaHouseUser> Home </Link>
                                                 </li>
                                                 <li>
-                                                    <Link to="/dashboard/myClass"> <FaFileSignature></FaFileSignature> My Class </Link>
+                                                    <Link to="/dashboard/addClass"> <FaFileSignature></FaFileSignature> Add A Class </Link>
+                                                </li>
+                                                <li>
+                                                    <Link to="/dashboard/myClass"> <FaIdBadge></FaIdBadge> My Classes </Link>
                                                 </li>
                                             </>
                                             :
                                             <>
                                                 <li>
+                                                    <Link to="/dashboard/home"> <FaHouseUser></FaHouseUser> Home </Link>
+                                                </li>
+                                                <li>
                                                     <Link to="/dashboard/mySelectedClass"> <FaColumns></FaColumns> My Selected Class </Link>
+                                                </li>
+                                                <li>
                                                     <Link to="/dashboard/myEnrolledClass"> <FaGitter></FaGitter> My Enrolled Class </Link>
+                                                </li>
+                                                <li>
                                                     <Link to="/dashboard/paymentHistory"> <FaScroll></FaScroll> Payment History </Link>
                                                 </li>
                                             </>
                                     }
                                 </>
                         }
+
+                        <div className="divider"></div>
+
+                        <li className=' mb-5'>
+                            <Link to="/"> <FaHouseUser></FaHouseUser> Home  </Link>
+                        </li>
+                        <li className=' mb-5'>
+                            <Link to="/classes"> <FaMusic></FaMusic> All Classes  </Link>
+                        </li>
+                        <li className=' mb-5'>
+                            <Link to="/instructors"> <FaUserGraduate></FaUserGraduate> All Instructors  </Link>
+                        </li>
 
                     </ul>
                 </div>
