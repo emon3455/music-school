@@ -5,7 +5,7 @@ import { Fade } from "react-awesome-reveal";
 
 const About = () => {
     return (
-        <div className="my-10  p-4 bg-gray-50">
+        <div className="my-10  p-4">
 
             <h4 className="text-4xl font-extrabold text-violet-500 text-center">About US</h4>
 
@@ -16,7 +16,7 @@ const About = () => {
                         Music Scholling BD
                     </Fade>
 
-                    <p className="font-medium text-gray-700 mb-5 text-justify">
+                    <p className="font-medium mb-5 text-justify">
                         Welcome to Music Schooling BD, a leading institution dedicated to providing exceptional music education in Bangladesh. We are committed to nurturing musical talent, fostering creativity, and promoting a deep appreciation for the art of music. Our school offers a comprehensive curriculum, highly skilled faculty, and state-of-the-art facilities to ensure a transformative learning experience for our students.
                     </p>                   
 

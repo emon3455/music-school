@@ -22,7 +22,7 @@ const Contact = () => {
 
             <h3 className="text-4xl font-extrabold text-violet-500 text-center my-5">Contact US</h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center mt-0 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center items-center mt-0 gap-5">
                 <div className="w-full max-w-lg mx-auto shadow-2xl rounded-2xl bg-base-100 order-2 md:order-1">
                     <form onSubmit={handleSend} className="card-body">
                         <Bounce className="text-3xl text-center font-bold">
@@ -38,7 +38,7 @@ const Contact = () => {
                             <label className="label">
                                 <span className="label-text">Message</span>
                             </label>
-                            <textarea required name='message' placeholder="Message" className="bg-gray-100 rounded-lg p-2 h-24" />
+                            <textarea required name='message' placeholder="Message" className=" rounded-lg p-2 h-24" />
                         </div>
 
                         <div className="form-control mt-6">
@@ -48,7 +48,7 @@ const Contact = () => {
                 </div>
 
                 <div className="max-w-full order-1">
-                    <img className="w-full" src={contact} alt="" />
+                    <img className="w-full rounded-xl" src={contact} alt="" />
                 </div>
             </div>
         </div>

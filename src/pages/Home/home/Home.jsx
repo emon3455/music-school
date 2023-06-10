@@ -6,6 +6,9 @@ import TopClasses from "../topClasses/TopClasses";
 import TopInstructors from "../topInstructors.jsx/TopInstructors";
 
 const Home = () => {
+
+    
+
     return (
         <div>
 

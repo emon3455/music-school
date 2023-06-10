@@ -1,6 +1,6 @@
-# MUSIC SCHOLLING BD
+## MUSIC SCHOLLING BD
 
-### This is a summer school website where you can lear music with our top ranked Instructors.This website Contains 3 pannels(Admin,Student,Instructors).
+#### This is a summer school website where you can learn music with our top ranked Instructors.This website Contains 3 pannels(Admin,Student,Instructors).
 
 ### Feachers:
 
