@@ -2,6 +2,7 @@
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useSelectedClass from "../../../hooks/useSelectedClass";
+import { Link } from "react-router-dom";
 
 const MySelectedClass = () => {
 
@@ -35,9 +36,7 @@ const MySelectedClass = () => {
                 })
 
             }
-          })
-
-        
+          })  
     }
 
     return (
@@ -55,7 +54,6 @@ const MySelectedClass = () => {
                             <th>Ins. Name</th>
                             <th>Ins. Email</th>
                             <th>Price</th>
-                            <th>Payment Status</th>
                             <th className="text-center">Action</th>
                         </tr>
                     </thead>
@@ -75,10 +73,9 @@ const MySelectedClass = () => {
                                 <td>{cls.instructorName}</td>
                                 <td>{cls.instructorEmail}</td>
                                 <td>${cls.price}</td>
-                                <td>{cls.paymentStatus}</td>
                                 <td className="space-x-2 text-center">
                                     <button onClick={()=> handleDelete(cls._id)} className="btn btn-error btn-sm"> Delete </button>
-                                    <button className="btn btn-warning btn-sm">Pay</button>
+                                    <Link to={`${cls._id}`} className="btn btn-warning btn-sm">Pay</Link>
                                 </td>
                             </tr>)
                         }

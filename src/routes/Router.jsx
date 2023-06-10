@@ -17,6 +17,7 @@ import InstructorRoute from "../privateRoutes/InstructorRoute";
 import UpdateMyClass from "../pages/dashboard/myClass/UpdateMyClass";
 import MySelectedClass from "../pages/dashboard/mySeledtedClass/MySelectedClass";
 import MyEnrolledClass from "../pages/dashboard/myEnrolledClass/MyEnrolledClass";
+import Payment from "../pages/dashboard/payment/Payment";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -82,6 +83,11 @@ const router = createBrowserRouter([
         {
           path: "myEnrolledClass",
           element: <MyEnrolledClass></MyEnrolledClass>
+        },
+        {
+          path: "mySelectedClass/:id",
+          element: <Payment></Payment>,
+          loader: ({params})=> fetch(`http://localhost:5000/selectedClass/${params.id}`)
         }
       ]
     }

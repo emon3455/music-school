@@ -28,8 +28,7 @@ const Classes = () => {
                 instructorName,
                 price: parseFloat(price),
                 studentName: user.displayName,
-                studentEmail: user.email,
-                paymentStatus: "pending"
+                studentEmail: user.email
             }
 
             fetch("http://localhost:5000/selectedClass", {
@@ -47,33 +46,6 @@ const Classes = () => {
                             title: 'Succussfully Done',
                             text: `Class Selected Successfully!`,
                         })
-
-                        // const updatedClass = {
-                        //     availableSeats: cls.availableSeats-1,
-                        //     totalStudents: cls.totalStudents+1
-                        // }
-
-                        // fetch(`http://localhost:5000/classes/${cls?._id}`, {
-                        //     method: "PATCH",
-                        //     headers: {
-                        //         "Content-Type": "application/json",
-                        //     },
-                        //     body: JSON.stringify(updatedClass)
-                        // })
-                        //     .then(res => res.json())
-                        //     .then(data => {
-
-                        //         if (data.modifiedCount > 0) {
-                        //             refetch();
-                        //             Swal.fire({
-                        //                 icon: 'success',
-                        //                 title: 'Succussfully Done',
-                        //                 text: `Class Selected Successfuully!`,
-                        //             })
-                        //         }
-
-                        //     })
-                        //     .catch(err => console.log(err.message))
                     }
                 })
                 .catch(er => console.log(er.message))
