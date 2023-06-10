@@ -36,36 +36,41 @@ const Banner = () => {
                 className="mySwiper"
             >
 
-                <SwiperSlide className="relative">
-                    <img src={bnr3} />
+                <SwiperSlide >
+                    <div className="relative">
+                        <img className="" src={bnr3} />
+                        <h2 className="text-white text-center lg:text-2xl top-0 bg-opacity-30 h-full w-full absolute bg-gray-900">Suitable Places for Music</h2>            
+                    </div>
                 </SwiperSlide>
-
-                <SwiperSlide>
-                    <img src={bnr1} />
+                <SwiperSlide >
+                    <div className="relative">
+                        <img className="" src={bnr1} />
+                        <h2 className="text-white text-center lg:text-2xl top-0 bg-opacity-50 h-full w-full absolute bg-gray-900">Extra Cares For Childrens</h2>            
+                    </div>
                 </SwiperSlide>
-
-                <SwiperSlide>
-                    <img src={bnr2} />
+                <SwiperSlide >
+                    <div className="relative">
+                        <img className="" src={bnr2} />
+                        <h2 className="text-white text-center lg:text-2xl top-0 bg-opacity-50 h-full w-full absolute bg-gray-900">Avaialble All Music Instruments</h2>            
+                    </div>
                 </SwiperSlide>
-
-                <SwiperSlide>
-                    <img src={bnr4} />
+                <SwiperSlide >
+                    <div className="relative">
+                        <img className="" src={bnr4} />
+                        <h2 className="text-white text-center lg:text-2xl top-0 bg-opacity-50 h-full w-full absolute bg-gray-900">Special Lessons</h2>            
+                    </div>
                 </SwiperSlide>
-
-                <SwiperSlide>
-                    <img src={bnr5} />
+                <SwiperSlide >
+                    <div className="relative">
+                        <img className="" src={bnr5} />
+                        <h2 className="text-white text-center lg:text-2xl top-0 bg-opacity-50 h-full w-full absolute bg-gray-900">We Can provide Musician Home Tutors</h2>            
+                    </div>
                 </SwiperSlide>
-
-                <SwiperSlide>
-                    <img src={bnr6} />
-                </SwiperSlide>
-
-                <SwiperSlide>
-                    <img src={bnr2} />
-                </SwiperSlide>
-
-                <SwiperSlide>
-                    <img src={bnr4} />
+                <SwiperSlide >
+                    <div className="relative">
+                        <img className="" src={bnr6} />
+                        <h2 className="text-white text-center lg:text-2xl top-0 bg-opacity-50 h-full w-full absolute bg-gray-900">Music Writing Lessons</h2>            
+                    </div>
                 </SwiperSlide>
 
             </Swiper>

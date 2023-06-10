@@ -32,14 +32,14 @@ const Navbar = () => {
                     <li><button onClick={handleLogout} className="bg-warning font-bold">Logout</button></li>
                 </>
                 :
-                <li><Link to="/signin">Sign In</Link></li>
+                <li ><Link className="bg-warning" to="/signin">Sign In</Link></li>
 
         }
     </>
 
     return (
         <>
-            <div className="navbar mx-auto sticky bg-black text-white z-20 bg-opacity-60">
+            <div className="navbar mx-auto sticky top-0 bg-black text-white z-20 bg-opacity-70">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost xl:hidden">

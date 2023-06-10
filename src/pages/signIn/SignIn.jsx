@@ -5,14 +5,16 @@ import { useForm } from "react-hook-form";
 import SocialLogin from "../../component/SocialLogin";
 import login from "../../assets/signin.jpg";
 import Swal from "sweetalert2";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import { FaEyeSlash } from "react-icons/fa";
 
 
 
 const SignIn = () => {
 
+    const [hide, setHide] = useState(true);
     const { signInUser } = useContext(AuthContext);
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -69,12 +71,17 @@ const SignIn = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password"  {...register("password", {
-                                required: true,
-                                minLength: 6,
-                                maxLength: 20,
-                                pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
-                            })} placeholder="password" className="input input-bordered" />
+                            <div className="relative">
+                                <input type={`${hide ? "password" : "text"}`} {...register("password", {
+                                    required: true,
+                                    minLength: 6,
+                                    maxLength: 20,
+                                    pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
+                                })} placeholder="password" className="input input-bordered w-full" />
+                                <span onClick={()=>setHide(!hide)} className="btn border border-l-0 border-collapse bg-white hover:bg-white absolute right-0">
+                                    <FaEyeSlash></FaEyeSlash>
+                                </span>
+                            </div>
                             {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}
                             {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
                             {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters</p>}

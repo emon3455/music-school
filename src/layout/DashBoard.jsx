@@ -1,5 +1,5 @@
 
-import { FaBars, FaColumns, FaElementor, FaFileSignature, FaGitter, FaHouseUser, FaUserCog } from 'react-icons/fa';
+import { FaBars, FaColumns, FaElementor, FaFileSignature, FaGitter, FaHouseUser, FaScroll, FaUserCog } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
 import useAdmin from '../hooks/useAdmin';
 import useInstructors from '../hooks/useInstructor';
@@ -60,7 +60,7 @@ const DashBoard = () => {
                                                 <li>
                                                     <Link to="/dashboard/mySelectedClass"> <FaColumns></FaColumns> My Selected Class </Link>
                                                     <Link to="/dashboard/myEnrolledClass"> <FaGitter></FaGitter> My Enrolled Class </Link>
-                                                    <Link to="/dashboard/paymentHistory"> <FaGitter></FaGitter> Payment History </Link>
+                                                    <Link to="/dashboard/paymentHistory"> <FaScroll></FaScroll> Payment History </Link>
                                                 </li>
                                             </>
                                     }
