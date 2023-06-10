@@ -19,20 +19,18 @@ const Classes = () => {
 
         if (user && user?.email) {
 
-            const {_id, name, image, instructorEmail, instructorName, availableSeats, price, totalStudents } = cls;
+            const { _id, name, image, instructorEmail, instructorName, availableSeats, price, totalStudents } = cls;
             const addedClass = {
                 classId: _id,
                 name,
                 image,
                 instructorEmail,
                 instructorName,
-                availableSeats: availableSeats - 1,
-                price,
-                totalStudents: totalStudents + 1,
-                userName: user.displayName,
-                userEmail: user.email
+                price: parseFloat(price),
+                studentName: user.displayName,
+                studentEmail: user.email,
+                paymentStatus: "pending"
             }
-            console.log(addedClass);
 
             fetch("http://localhost:5000/selectedClass", {
                 method: "POST",
@@ -44,43 +42,45 @@ const Classes = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.insertedId) {
-
-                        const updatedClass = {
-                            availableSeats: addedClass.availableSeats,
-                            totalStudents: addedClass.totalStudents
-                        }
-
-                        fetch(`http://localhost:5000/classes/${cls?._id}`, {
-                            method: "PATCH",
-                            headers: {
-                                "Content-Type": "application/json",
-                            },
-                            body: JSON.stringify(updatedClass)
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Succussfully Done',
+                            text: `Class Selected Successfuully!`,
                         })
-                            .then(res => res.json())
-                            .then(data => {
 
-                                if (data.modifiedCount > 0) {
-                                    refetch();
-                                    Swal.fire({
-                                        icon: 'success',
-                                        title: 'Succussfully Done',
-                                        text: `Class Selected Successfuully!`,
-                                    })
-                                }
+                        // const updatedClass = {
+                        //     availableSeats: cls.availableSeats-1,
+                        //     totalStudents: cls.totalStudents+1
+                        // }
 
-                            })
-                            .catch(err => console.log(err.message))
+                        // fetch(`http://localhost:5000/classes/${cls?._id}`, {
+                        //     method: "PATCH",
+                        //     headers: {
+                        //         "Content-Type": "application/json",
+                        //     },
+                        //     body: JSON.stringify(updatedClass)
+                        // })
+                        //     .then(res => res.json())
+                        //     .then(data => {
+
+                        //         if (data.modifiedCount > 0) {
+                        //             refetch();
+                        //             Swal.fire({
+                        //                 icon: 'success',
+                        //                 title: 'Succussfully Done',
+                        //                 text: `Class Selected Successfuully!`,
+                        //             })
+                        //         }
+
+                        //     })
+                        //     .catch(err => console.log(err.message))
                     }
                 })
                 .catch(er => console.log(er.message))
-
-
-
         }
         else {
             Swal.fire({
-                title: 'Please Log in To Order',
+                title: 'Please Log in To Select Class',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
