@@ -1,11 +1,42 @@
 /* eslint-disable no-unused-vars */
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useSelectedClass from "../../../hooks/useSelectedClass";
 
 const MySelectedClass = () => {
 
     const [selectedClasses, refetch] = useSelectedClass();
+    const [axiosSecure] = useAxiosSecure();
 
-    const handleDelete=(cls)=>{
+    const handleDelete=(id)=>{
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+
+                axiosSecure.delete(`/selectedClass/${id}`)
+                .then(res=>{
+                    console.log(res);
+                    if(res.data.deletedCount === 1){
+                        refetch();
+                        Swal.fire(
+                            'Deleted!',
+                            'Your Selected has been deleted.',
+                            'success'
+                        )
+                    }
+                })
+
+            }
+          })
+
         
     }
 
@@ -46,7 +77,7 @@ const MySelectedClass = () => {
                                 <td>${cls.price}</td>
                                 <td>{cls.paymentStatus}</td>
                                 <td className="space-x-2 text-center">
-                                    <button onClick={()=> handleDelete(cls)} className="btn btn-error btn-sm">Delete</button>
+                                    <button onClick={()=> handleDelete(cls._id)} className="btn btn-error btn-sm"> Delete </button>
                                     <button className="btn btn-warning btn-sm">Pay</button>
                                 </td>
                             </tr>)

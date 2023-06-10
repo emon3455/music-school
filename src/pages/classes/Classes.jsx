@@ -45,7 +45,7 @@ const Classes = () => {
                         Swal.fire({
                             icon: 'success',
                             title: 'Succussfully Done',
-                            text: `Class Selected Successfuully!`,
+                            text: `Class Selected Successfully!`,
                         })
 
                         // const updatedClass = {
@@ -112,7 +112,7 @@ const Classes = () => {
                             <h2 className="card-title">{classItem.name}</h2>
 
                             <div className="grid grid-cols-2 text-lg">
-                                <p>Teacher: {classItem.instructor}</p>
+                                <p>Teacher: {classItem.instructorName}</p>
                                 <p>Cost: {classItem.price}</p>
                                 <p>Total Student: {classItem.totalStudents}</p>
                                 <p>Available Sits: {classItem.availableSeats}</p>
