@@ -8,6 +8,7 @@
 - Login/Register also Google Login
 - Instructors page(conatins all instrcutors).
 - Classes Page(conatins all class).
+- Day/Night Toggle Theme.
 
 - ##### Teacher Role:
     - Add Class (only instructors can add).

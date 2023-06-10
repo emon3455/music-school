@@ -18,7 +18,7 @@ const TopInstructors = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
                 {
-                    instructors.slice(0, 6).map(teacher => <div key={teacher._id} className="card card-compact bg-base-100 shadow-xl">
+                    instructors.slice(0, 6).map(teacher => <div key={teacher._id} className="card card-compact bg-base-100 shadow-lg shadow-orange-300/50">
 
                         <figure><img src={teacher.image} alt="Shoes" /></figure>
 

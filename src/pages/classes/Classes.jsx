@@ -77,13 +77,13 @@ const Classes = () => {
             <Bounce className="text-4xl text-center my-5 text-violet-500 font-bold">Our Classes!!!</Bounce>
             <hr />
 
-            <div className="grid mt-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+            <div className="grid mt-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
                 {
-                    approvedClass.map(classItem => <div key={classItem._id} className={`card card-compact ${classItem.availableSeats === 0 ? "bg-red-200" : "bg-base-100"} shadow-xl`}>
+                    approvedClass.map(classItem => <div key={classItem._id} className={`card shadow-md shadow-yellow-300/50 card-compact flex flex-col ${classItem.availableSeats === 0 ? "bg-red-200" : "bg-base-100"} shadow-2xl`}>
 
                         <figure><img src={classItem.image} alt="Shoes" /></figure>
 
-                        <div className="card-body w-full">
+                        <div className="card-body w-full  justify-end">
                             <h2 className="card-title">{classItem.name}</h2>
 
                             <div className="grid grid-cols-2 text-lg">

@@ -81,7 +81,7 @@ const SignUp = () => {
                     <title>Music Scholling | SignUp</title>
                 </Helmet>
                 <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center items-center gap-5 p-2">
-                    <div className="card w-full max-w-2xl drop-shadow-2xl bg-base-100 order-2 md:order-1">
+                    <div className="card w-full max-w-2xl shadow-lg shadow-pink-400/50 bg-base-100 order-2 md:order-1">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <h2 className="text-3xl font-bold text-center text-violet-600">Sign Up</h2>
 
@@ -105,7 +105,7 @@ const SignUp = () => {
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="email" placeholder="email" name="email" {...register("email", { required: true })} className="p-2 border-2 rounded-lg w-full" />
+                                    <input type="email" placeholder="email" name="email" {...register("email", { required: true })} className="input input-bordered w-full" />
                                     {errors.email && <span className="text-red-600 ">email is required</span>}
                                 </div>
                                 <div className="form-control">
@@ -119,7 +119,7 @@ const SignUp = () => {
                                             maxLength: 20,
                                             pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
                                         })} placeholder="password" className="input input-bordered w-full" />
-                                        <span onClick={() => setHide(!hide)} className="btn border border-l-0 border-collapse bg-white hover:bg-white absolute right-0">
+                                        <span onClick={() => setHide(!hide)} className="btn btn-ghost border border-l-0 border-collapse absolute right-0">
                                             <FaEyeSlash></FaEyeSlash>
                                         </span>
                                     </div>

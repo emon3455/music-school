@@ -22,13 +22,13 @@ const Instructors = () => {
             <Bounce className="text-4xl text-center my-5 text-violet-500 font-bold">Our Instructors !!!</Bounce>
             <hr />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+            <div className="grid mt-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
                 {
-                    instructors.map(teacher => <div key={teacher._id} className="card card-compact bg-base-100 shadow-xl">
+                    instructors.map(teacher => <div key={teacher._id} className="card shadow-md shadow-sky-300/50  card-compact flex flex-col bg-base-100">
 
                         <figure><img src={teacher.image} alt="Shoes" /></figure>
 
-                        <div className="card-body">
+                        <div className="card-body  justify-end">
                             <h2 className="card-title">{teacher.name}</h2>
                             <p>Mail: {teacher.email}</p>
                         </div>
