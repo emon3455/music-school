@@ -70,13 +70,6 @@ const Banner = () => {
 
             </Swiper>
 
-            <div className="bg-gray-700 p-5 lg:p-20 text-white">
-                <h2 className="text-xl sm:text-2xl lg:text-3xl text-center font-bold mb-4"> <span className="text-yellow-500">Experience the Artistry of Music</span>  With <span className="text-red-400">Music Scholling BD</span></h2>
-                <p className=" md:text-center text-sm md:text-lg lg:px-40">
-                    Step into a world of artistry and expression at Music Scholling BD. Explore the rich tapestry of music, learn from experienced professionals, and unleash your inner artist, creating beautiful melodies that resonate with your soul.
-                </p>
-            </div>
-
         </div>
     );
 };

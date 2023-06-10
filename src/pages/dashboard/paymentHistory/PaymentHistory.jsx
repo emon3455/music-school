@@ -26,7 +26,7 @@ const PaymentHistory = () => {
                                 <td>{cls.className}</td>
                                 <td>{cls.transactionId}</td>
                                 <td>${cls.price}</td>
-                                <td>{cls.date.slice(0,10)}</td>
+                                <td>{cls.date}</td>
                             </tr>)
                         }
 
