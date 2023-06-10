@@ -45,7 +45,7 @@ const MySelectedClass = () => {
             <Helmet>
                 <title>Music Scholling | My Selected Class</title>
             </Helmet>
-            <h2 className="text-3xl font-extrabold text-center mt-5 text-red-500">My Selected Class</h2>
+            <h2 className="text-4xl font-bold my-5 text-center">Your <span className="text-violet-600">Selected</span> Classes</h2>
 
             <div className="overflow-x-auto w-full mt-10 mx-auto">
                 <table className="table table-zebra">

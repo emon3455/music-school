@@ -6,10 +6,12 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Bounce, Fade, Slide } from "react-awesome-reveal";
 
 const Classes = () => {
 
-    const [classes, refetch] = useClasses();
+    const [classes] = useClasses();
+    const approvedClass = classes.filter(cls=> cls.status==="approved");
 
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -72,11 +74,12 @@ const Classes = () => {
                 <title>Music Scholling | Classes</title>
             </Helmet>
 
-            <h2 className="text-4xl text-center my-5 text-violet-500 font-bold">Our Classes</h2>
+            <Bounce className="text-4xl text-center my-5 text-violet-500 font-bold">Our Classes!!!</Bounce>
+            <hr />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+            <div className="grid mt-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
                 {
-                    classes.map(classItem => <div key={classItem._id} className={`card card-compact ${classItem.availableSeats === 0 ? "bg-red-200" : "bg-base-100"} shadow-xl`}>
+                    approvedClass.map(classItem => <div key={classItem._id} className={`card card-compact ${classItem.availableSeats === 0 ? "bg-red-200" : "bg-base-100"} shadow-xl`}>
 
                         <figure><img src={classItem.image} alt="Shoes" /></figure>
 

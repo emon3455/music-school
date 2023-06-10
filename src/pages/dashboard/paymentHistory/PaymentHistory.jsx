@@ -9,7 +9,7 @@ const PaymentHistory = () => {
             <Helmet>
                 <title>Music Scholling | Payment History</title>
             </Helmet>
-            <h2 className="text-4xl font-bold my-5 text-center text-red-500">Your Payment History</h2> 
+            <h2 className="text-4xl font-bold my-5 text-center ">Your <span className="text-violet-500">Payment</span> History</h2> 
             <div className="overflow-x-auto w-full lg:w-2/3  mt-10 mx-auto">
                 <table className="table table-zebra">
                     {/* head */}

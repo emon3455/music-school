@@ -24,10 +24,10 @@ const DashBoard = () => {
 
                 <div className="drawer-side z-50">
                     <label htmlFor="my-drawer" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-2/3 lg:w-1/4 text-lg space-y-2 h-full bg-base-200 text-base-content">
+                    <ul className="menu p-4 w-2/3 sm:w-1/4 lg:text-lg space-y-2 h-full bg-base-200 text-base-content">
                         {/* Sidebar content here */}
 
-                        <li className='text-xl mb-5 font-extrabold'>
+                        <li className='lg:text-xl mb-5 font-extrabold'>
                             <Link> Music Scholling BD </Link>
                         </li>
                         <hr />

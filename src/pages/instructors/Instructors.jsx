@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Bounce } from "react-awesome-reveal";
 import { Helmet } from "react-helmet-async";
 
 const Instructors = () => {
@@ -18,7 +19,8 @@ const Instructors = () => {
                 <title>Music Scholling | Instructors</title>
             </Helmet>
 
-            <h2 className="text-4xl text-center my-5 text-violet-500 font-bold">Our Instructors</h2>
+            <Bounce className="text-4xl text-center my-5 text-violet-500 font-bold">Our Instructors !!!</Bounce>
+            <hr />
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
                 {
@@ -29,9 +31,6 @@ const Instructors = () => {
                         <div className="card-body">
                             <h2 className="card-title">{teacher.name}</h2>
                             <p>Mail: {teacher.email}</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-info font-bold" disabled={teacher.availableSeats == 0}>Select</button>
-                            </div>
                         </div>
 
                     </div>)

@@ -58,7 +58,8 @@ const SendFeedBack = () => {
                 cls
                     ?
                     <>
-                        <h2 className="text-3xl mt-5 text-violet-600 font-bold text-center ">Send Feedback To Instructor: {cls.instructorName}</h2>
+                        <h2 className="text-4xl font-bold my-5 text-center">Send Feedback To Instructor: <span className="text-violet-600">{cls.instructorName}</span> Classes</h2>
+                        <hr />
 
                         <div className="card mx-auto my-5 max-w-4xl bg-base-100 shadow-2xl">
                             <form onSubmit={handleSubmit} className="card-body">

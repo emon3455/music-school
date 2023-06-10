@@ -10,7 +10,8 @@ const MyEnrolledClass = () => {
             <Helmet>
                 <title>Music Scholling | My Enrolled Class</title>
             </Helmet>
-            <h2 className="text-4xl font-bold my-5">Your Enrolled Class</h2> 
+            <h2 className="text-4xl font-bold my-5 text-center">Your <span className="text-violet-600">Enrolled</span> Classes</h2>
+            <hr /> 
             <div className="overflow-x-auto w-full lg:w-2/3  mt-10 mx-auto">
                 <table className="table table-zebra">
                     {/* head */}

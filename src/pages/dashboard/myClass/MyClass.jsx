@@ -27,7 +27,8 @@ const MyClass = () => {
                 <title>Music Scholling | My Classes</title>
             </Helmet>
 
-            <h2 className="text-4xl text-center font-extrabold text-red-500 mt-5">My Classes {myClasses.length}</h2>
+            <h2 className="text-4xl font-bold my-5 text-center">My <span className="text-violet-600">Classes</span></h2>
+            <hr />
 
             <div className="mt-5 overflow-x-auto w-full lg:w-4/5 mx-auto">
                 <table className="table table-zebra">

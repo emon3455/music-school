@@ -50,7 +50,9 @@ const ManageClasses = () => {
                 <title>Music Scholling | Manage Classes</title>
             </Helmet>
 
-            <h2 className="text-4xl font-bold text-red-400 my-5 text-center">Manage Classes</h2>
+            <h2 className="text-4xl font-bold my-5 text-center">Manage  <span className="text-violet-600">Classes</span></h2>
+            <hr />
+            <h2 className="text-4xl font-bold text-red-400 my-5 text-center"></h2>
 
             <div className="overflow-x-auto w-full mx-auto">
                 <table className="table table-zebra">
@@ -85,7 +87,7 @@ const ManageClasses = () => {
                                 <td>{cls.instructorEmail}</td>
                                 <td>{cls.availableSeats}</td>
                                 <td>${cls.price}</td>
-                                <td>{cls.status}</td>
+                                <td className={`${cls.status==="approved" && "text-green-600"} ${cls.status==="pending" && "text-warning"} ${cls.status==="deny" && "text-error"}`}>{cls.status}</td>
                                 <td className="space-x-2 text-center">
                                     <button onClick={() => handleApprovedClass(cls)} className="btn btn-primary btn-sm" disabled={cls.status == "approved" || cls.status == "deny"}>Approve</button>
                                     <button onClick={() => handleDenyClass(cls)} className="btn btn-warning btn-sm" disabled={cls.status == "approved" || cls.status == "deny"}>Deny</button>

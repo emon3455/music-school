@@ -54,7 +54,8 @@ const ManageUsers = () => {
             <Helmet>
                 <title>Music Scholling | Manage Users</title>
             </Helmet>
-            <h2 className="text-4xl font-bold text-red-400 my-5 text-center">Manage All Users</h2>
+            <h2 className="text-4xl font-bold my-5 text-center">Manage <span className="text-violet-600">All Users</span></h2>
+            <hr />
 
             <div className="overflow-x-auto w-full xl:w-4/5 mx-auto">
                 <table className="table table-zebra">
