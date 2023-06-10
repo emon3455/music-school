@@ -1,10 +1,98 @@
+/* eslint-disable no-unused-vars */
 
 import { Helmet } from "react-helmet-async";
 import useClasses from "../../hooks/useClasses";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import { useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Classes = () => {
 
-    const [classes] = useClasses();
+    const [classes, refetch] = useClasses();
+
+    const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const handleAddToSelectedClass = (cls) => {
+
+        if (user && user?.email) {
+
+            const {_id, name, image, instructorEmail, instructorName, availableSeats, price, totalStudents } = cls;
+            const addedClass = {
+                classId: _id,
+                name,
+                image,
+                instructorEmail,
+                instructorName,
+                availableSeats: availableSeats - 1,
+                price,
+                totalStudents: totalStudents + 1,
+                userName: user.displayName,
+                userEmail: user.email
+            }
+            console.log(addedClass);
+
+            fetch("http://localhost:5000/selectedClass", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(addedClass)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+
+                        const updatedClass = {
+                            availableSeats: addedClass.availableSeats,
+                            totalStudents: addedClass.totalStudents
+                        }
+
+                        fetch(`http://localhost:5000/classes/${cls?._id}`, {
+                            method: "PATCH",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify(updatedClass)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+
+                                if (data.modifiedCount > 0) {
+                                    refetch();
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Succussfully Done',
+                                        text: `Class Selected Successfuully!`,
+                                    })
+                                }
+
+                            })
+                            .catch(err => console.log(err.message))
+                    }
+                })
+                .catch(er => console.log(er.message))
+
+
+
+        }
+        else {
+            Swal.fire({
+                title: 'Please Log in To Order',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate("/signin", { state: { from: location } });
+                }
+            })
+        }
+    }
 
     return (
         <div className="p-2 my-5">
@@ -16,7 +104,7 @@ const Classes = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
                 {
-                    classes.map(classItem => <div key={classItem._id} className={`card card-compact ${classItem.availableSeats === 0 ? "bg-red-200" : "bg-base-100" } shadow-xl`}>
+                    classes.map(classItem => <div key={classItem._id} className={`card card-compact ${classItem.availableSeats === 0 ? "bg-red-200" : "bg-base-100"} shadow-xl`}>
 
                         <figure><img src={classItem.image} alt="Shoes" /></figure>
 
@@ -33,7 +121,7 @@ const Classes = () => {
                             <div className="flex justify-between w-full">
                             </div>
                             <div className="card-actions justify-end">
-                                <button className="btn btn-info font-bold" disabled={classItem.availableSeats == 0}>Select</button>
+                                <button onClick={() => handleAddToSelectedClass(classItem)} className="btn btn-info font-bold" disabled={classItem.availableSeats == 0}>Select</button>
                             </div>
                         </div>
 

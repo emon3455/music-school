@@ -15,6 +15,8 @@ import AddClass from "../pages/dashboard/addClass/AddClass";
 import MyClass from "../pages/dashboard/myClass/MyClass";
 import InstructorRoute from "../privateRoutes/InstructorRoute";
 import UpdateMyClass from "../pages/dashboard/myClass/UpdateMyClass";
+import MySelectedClass from "../pages/dashboard/mySeledtedClass/MySelectedClass";
+import MyEnrolledClass from "../pages/dashboard/myEnrolledClass/MyEnrolledClass";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -71,6 +73,15 @@ const router = createBrowserRouter([
         {
           path: "myClass/singleClass/:id",
           element: <InstructorRoute><UpdateMyClass></UpdateMyClass></InstructorRoute>
+        },
+        // student dashboard start here
+        {
+          path: "mySelectedClass",
+          element: <MySelectedClass></MySelectedClass>
+        },
+        {
+          path: "myEnrolledClass",
+          element: <MyEnrolledClass></MyEnrolledClass>
         }
       ]
     }
