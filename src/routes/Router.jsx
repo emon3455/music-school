@@ -18,6 +18,7 @@ import UpdateMyClass from "../pages/dashboard/myClass/UpdateMyClass";
 import MySelectedClass from "../pages/dashboard/mySeledtedClass/MySelectedClass";
 import MyEnrolledClass from "../pages/dashboard/myEnrolledClass/MyEnrolledClass";
 import Payment from "../pages/dashboard/payment/Payment";
+import PaymentHistory from "../pages/dashboard/paymentHistory/PaymentHistory";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -88,6 +89,10 @@ const router = createBrowserRouter([
           path: "mySelectedClass/:id",
           element: <Payment></Payment>,
           loader: ({params})=> fetch(`http://localhost:5000/selectedClass/${params.id}`)
+        },
+        {
+          path: "paymentHistory",
+          element: <PaymentHistory></PaymentHistory>
         }
       ]
     }

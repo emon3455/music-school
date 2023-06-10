@@ -60,6 +60,7 @@ const DashBoard = () => {
                                                 <li>
                                                     <Link to="/dashboard/mySelectedClass"> <FaColumns></FaColumns> My Selected Class </Link>
                                                     <Link to="/dashboard/myEnrolledClass"> <FaGitter></FaGitter> My Enrolled Class </Link>
+                                                    <Link to="/dashboard/paymentHistory"> <FaGitter></FaGitter> Payment History </Link>
                                                 </li>
                                             </>
                                     }
