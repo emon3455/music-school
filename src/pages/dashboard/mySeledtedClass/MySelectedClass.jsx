@@ -77,7 +77,7 @@ const MySelectedClass = () => {
                                 <td>{cls.instructorName}</td>
                                 <td>{cls.instructorEmail}</td>
                                 <td>${cls.price}</td>
-                                <td className="space-x-2 text-center">
+                                <td className="space-x-2 space-y-2 text-center">
                                     <button onClick={()=> handleDelete(cls._id)} className="btn btn-error btn-sm"> Delete </button>
                                     <Link to={`${cls._id}`} className="btn btn-warning btn-sm">Pay</Link>
                                 </td>

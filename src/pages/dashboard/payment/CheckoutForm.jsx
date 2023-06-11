@@ -113,7 +113,7 @@ const CheckoutForm = ({ cls, price }) => {
 
     return (
         <div>
-            <h2 className="text-4xl font-bold text-center text-red-500 my-5">Please Pay</h2>
+            <h2 className="text-4xl font-bold text-center my-5">Please <span className="text-violet-500">Pay</span></h2>
             <form className="card my-10 shadow-2xl w-2/3 mx-auto p-8" onSubmit={handleSubmit}>
                 <CardElement
                     className="input"

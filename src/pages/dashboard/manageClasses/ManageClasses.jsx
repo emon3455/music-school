@@ -88,7 +88,7 @@ const ManageClasses = () => {
                                 <td>{cls.availableSeats}</td>
                                 <td>${cls.price}</td>
                                 <td className={`${cls.status==="approved" && "text-green-600"} ${cls.status==="pending" && "text-warning"} ${cls.status==="deny" && "text-error"}`}>{cls.status}</td>
-                                <td className="space-x-2 text-center">
+                                <td className="space-x-2 space-y-2 text-center">
                                     <button onClick={() => handleApprovedClass(cls)} className="btn btn-primary btn-sm" disabled={cls.status == "approved" || cls.status == "deny"}>Approve</button>
                                     <button onClick={() => handleDenyClass(cls)} className="btn btn-warning btn-sm" disabled={cls.status == "approved" || cls.status == "deny"}>Deny</button>
                                     <Link to={`classes/${cls._id}`} className="btn btn-info btn-sm">Feedback</Link>

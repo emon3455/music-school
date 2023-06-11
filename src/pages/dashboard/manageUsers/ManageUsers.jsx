@@ -79,7 +79,7 @@ const ManageUsers = () => {
                                 <td>{usr.name}</td>
                                 <td>{usr.email}</td>
                                 <td>{usr.role}</td>
-                                <td className="space-x-2 text-center">
+                                <td className="space-x-2 space-y-2 text-center">
                                     <button onClick={() => handleMakeAdmin(usr)} className="btn btn-primary btn-sm" disabled={usr.role == "admin"}>Make Admin</button>
                                     <button onClick={() => handleMakeInstructor(usr)} className="btn btn-warning btn-sm" disabled={usr.role == "instructor"}>Make Instructor</button>
                                 </td>
