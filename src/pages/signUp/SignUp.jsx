@@ -17,8 +17,7 @@ const SignUp = () => {
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data)
-        reset();
+        
         createUser(data.email, data.password)
             .then(res => {
                 const createdUser = res.user;
@@ -47,7 +46,7 @@ const SignUp = () => {
                                         'Success!',
                                         'success'
                                     )
-
+                                    reset();
                                     logOut()
                                         .then(() => {
                                             navigate("/signin", { replace: true });

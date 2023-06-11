@@ -35,5 +35,4 @@
 - Tailwind & Daisy UI
 - React-awesome-reveal
 
-### Live Website Link:
- ##### link: https://music-scholing.web.app/
+### Live Website Link: https://music-scholing.web.app/

@@ -80,8 +80,8 @@ const ManageUsers = () => {
                                 <td>{usr.email}</td>
                                 <td>{usr.role}</td>
                                 <td className="space-x-2 text-center">
-                                    <button onClick={() => handleMakeAdmin(usr)} className="btn btn-primary btn-sm" disabled={usr.role == "admin" || usr.role == "instructor"}>Make Admin</button>
-                                    <button onClick={() => handleMakeInstructor(usr)} className="btn btn-warning btn-sm" disabled={usr.role == "admin" || usr.role == "instructor"}>Make Instructor</button>
+                                    <button onClick={() => handleMakeAdmin(usr)} className="btn btn-primary btn-sm" disabled={usr.role == "admin"}>Make Admin</button>
+                                    <button onClick={() => handleMakeInstructor(usr)} className="btn btn-warning btn-sm" disabled={usr.role == "instructor"}>Make Instructor</button>
                                 </td>
                             </tr>)
                         }

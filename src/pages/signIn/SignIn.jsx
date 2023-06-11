@@ -25,7 +25,6 @@ const SignIn = () => {
 
 
     const onSubmit = data => {
-        console.log(data);
 
         signInUser(data.email, data.password)
             .then(res => {
@@ -36,6 +35,7 @@ const SignIn = () => {
                         'Success!',
                         'success'
                     )
+                    reset();
                     navigate(from, { replace: true });
                 }
                 else {

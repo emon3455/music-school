@@ -87,15 +87,15 @@ const router = createBrowserRouter([
         // student dashboard start here
         {
           path: "mySelectedClass",
-          element: <MySelectedClass></MySelectedClass>
+          element: <PrivateRoutes><MySelectedClass></MySelectedClass></PrivateRoutes>
         },
         {
           path: "myEnrolledClass",
-          element: <MyEnrolledClass></MyEnrolledClass>
+          element: <PrivateRoutes><MyEnrolledClass></MyEnrolledClass></PrivateRoutes>
         },
         {
           path: "mySelectedClass/:id",
-          element: <Payment></Payment>,
+          element: <PrivateRoutes><Payment></Payment></PrivateRoutes>,
           loader: ({params})=> fetch(`https://music-school-server-rho.vercel.app/selectedClass/${params.id}`)
         },
         {
