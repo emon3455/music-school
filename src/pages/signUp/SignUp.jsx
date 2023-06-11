@@ -31,7 +31,7 @@ const SignUp = () => {
                         const savedUser = { name: data.name, email: data.email, role: "student" }
                         console.log(savedUser);
 
-                        fetch("http://localhost:5000/users", {
+                        fetch("https://music-school-server-rho.vercel.app/users", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",

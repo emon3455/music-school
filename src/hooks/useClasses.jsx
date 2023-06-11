@@ -11,7 +11,7 @@ const useClasses = () => {
 
         queryKey: ['classes', user?.email],
         queryFn: async ()=>{
-            const response = await fetch(`http://localhost:5000/classes`);
+            const response = await fetch(`https://music-school-server-rho.vercel.app/classes`);
             return response.json();
         },
     })

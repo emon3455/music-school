@@ -33,7 +33,7 @@ const Classes = () => {
                 studentEmail: user.email
             }
 
-            fetch("http://localhost:5000/selectedClass", {
+            fetch("https://music-school-server-rho.vercel.app/selectedClass", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
