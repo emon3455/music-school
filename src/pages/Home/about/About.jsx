@@ -12,7 +12,7 @@ const About = () => {
             <div className="grid grid-cols-1  md:grid-cols-2 justify-center items-center mt-0 gap-5" >
                 <div className="order-2 md:order-1">
 
-                    <Fade delay={1e3} cascade damping={1e-1} className="text-4xl font-bold text-orange-500 my-7">
+                    <Fade delay={1e3} cascade damping={1e-1} className="text-2xl lg:text-4xl font-bold text-orange-500 my-7">
                         Music Scholling BD
                     </Fade>
 

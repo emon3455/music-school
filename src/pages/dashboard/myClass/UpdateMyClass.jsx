@@ -27,7 +27,7 @@ const UpdateMyClass = () => {
         const availableSeats = form.availableSeats.value;
         const price = form.price.value;
 
-        if(cls.name===name && cls.image===image && cls.availableSeats===availableSeats && cls.price===price){
+        if(cls.name==name && cls.image==image && cls.availableSeats==availableSeats && cls.price==price){
             Swal.fire({
                 icon: 'error',
                 title: 'Please Update Atleast One field',

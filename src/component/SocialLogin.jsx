@@ -17,7 +17,7 @@ const SocialLogin = () => {
         signInWithGoggle()
             .then(res => {
                 const logedUser = res.user;
-                const savedUser = { name: logedUser.displayName , email: logedUser.email, role:"student" }
+                const savedUser = { name: logedUser.displayName , email: logedUser.email, role:"student", image: logedUser.photoURL }
                 
                 fetch("https://music-school-server-rho.vercel.app/users", {
                     method: "POST",

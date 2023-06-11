@@ -28,7 +28,7 @@ const SignUp = () => {
                         displayName: data.name, photoURL: data.photo
                     }).then(() => {
 
-                        const savedUser = { name: data.name, email: data.email, role: "student" }
+                        const savedUser = { name: data.name, email: data.email, role: "student", image: data.photo }
                         console.log(savedUser);
 
                         fetch("https://music-school-server-rho.vercel.app/users", {

@@ -16,8 +16,8 @@ const AddClass = () => {
             name: data.name,
             instructorName: user.displayName,
             instructorEmail: user.email,
-            availableSeats: data.availableSeats,
-            price: data.price,
+            availableSeats: parseInt(data.availableSeats),
+            price: parseInt(data.price),
             totalStudents: 0,
             status: "pending"
         }
@@ -44,7 +44,7 @@ const AddClass = () => {
             </Helmet>
 
             <div className=" mt-5 grid grid-cols-1 md:grid-cols-2 justify-items-center items-center gap-5 p-2">
-                <div className="card w-full max-w-2xl drop-shadow-2xl bg-base-100 order-2 md:order-1">
+                <div className="card w-full max-w-2xl shadow-lg shadow-pink-400/50 bg-base-100 order-2 md:order-1">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <h2 className="text-3xl font-bold text-center text-violet-600">Add Class</h2>
 
