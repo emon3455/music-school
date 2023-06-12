@@ -114,7 +114,7 @@ const CheckoutForm = ({ cls, price }) => {
     return (
         <div>
             <h2 className="text-4xl font-bold text-center my-5">Please <span className="text-violet-500">Pay</span></h2>
-            <form className="card my-10 shadow-2xl w-2/3 mx-auto p-8" onSubmit={handleSubmit}>
+            <form className="card my-10 shadow-lg shadow-sky-400/50 w-full lg:w-2/3 mx-auto p-8" onSubmit={handleSubmit}>
                 <CardElement
                     className="input"
                     options={{
@@ -140,7 +140,7 @@ const CheckoutForm = ({ cls, price }) => {
                 </div>
             </form>
 
-            <div className="card shadow-2xl my-5 p-2 w-1/3 mx-auto">
+            <div className="card shadow-2xl my-5 p-2 w-full lg:w-1/3 mx-auto">
                 {
                     cardError && <p className="text-red-600 text-center">{cardError}</p>
                 }
