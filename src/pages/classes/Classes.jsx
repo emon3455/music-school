@@ -86,7 +86,7 @@ const Classes = () => {
                 {
                     approvedClass.map(classItem => <div key={classItem._id} className={`card shadow-md shadow-yellow-300/50 card-compact flex flex-col ${classItem.availableSeats === 0 ? "bg-red-200" : "bg-base-100"} shadow-2xl`}>
 
-                        <figure><img src={classItem.image} alt="Shoes" /></figure>
+                        <figure><img src={classItem.image} alt="classes" /></figure>
 
                         <div className="card-body w-full  justify-end">
                             <h2 className="card-title">{classItem.name}</h2>

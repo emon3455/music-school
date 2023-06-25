@@ -35,4 +35,8 @@
 - Tailwind & Daisy UI
 - React-awesome-reveal
 
+#### For Test Please Login As Admin/Instructor:
+- Admin Email: admin@gmail.com || Pass: 123@Ea
+- Instructor Email: teacher@gmail.com || Pass: 123@Ea
+
 ### Live Website Link: https://music-scholing.web.app/

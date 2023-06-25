@@ -26,7 +26,7 @@ const Instructors = () => {
                 {
                     instructors.map(teacher => <div key={teacher._id} className="card shadow-md shadow-sky-300/50  card-compact flex flex-col bg-base-100">
 
-                        <figure><img src={teacher.image} alt="Shoes" /></figure>
+                        <figure><img src={teacher.image} alt="instructors" /></figure>
 
                         <div className="card-body  justify-end">
                             <h2 className="card-title">{teacher.name}</h2>
