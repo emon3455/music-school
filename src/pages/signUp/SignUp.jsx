@@ -30,7 +30,7 @@ const SignUp = () => {
                         const savedUser = { name: data.name, email: data.email, role: "student", image: data.photo }
                         console.log(savedUser);
 
-                        fetch("https://music-school-server-rho.vercel.app/users", {
+                        fetch("https://music-school-server.onrender.com/users", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",

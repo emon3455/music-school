@@ -40,7 +40,7 @@ const AuthProvider = ({children}) => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
             if(currentUser){
-                axios.post("https://music-school-server-rho.vercel.app/jwt",{email: currentUser.email})
+                axios.post("https://music-school-server.onrender.com/jwt",{email: currentUser.email})
                 .then(data=>{
                      localStorage.setItem("access-token", data.data.token);
                      setLoading(false);

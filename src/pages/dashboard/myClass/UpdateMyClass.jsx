@@ -12,7 +12,7 @@ const UpdateMyClass = () => {
     const [cls, setCls] = useState(null);
 
     useEffect(() => {
-        fetch(`https://music-school-server-rho.vercel.app/classes/${params.id}`)
+        fetch(`https://music-school-server.onrender.com/classes/${params.id}`)
             .then(res => res.json())
             .then(data => setCls(data))
     }, [params])
@@ -44,7 +44,7 @@ const UpdateMyClass = () => {
         }
         const token = localStorage.getItem('access-token');
 
-        fetch(`https://music-school-server-rho.vercel.app/myclasses/${cls?._id}`, {
+        fetch(`https://music-school-server.onrender.com/myclasses/${cls?._id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",

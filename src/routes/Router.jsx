@@ -96,7 +96,7 @@ const router = createBrowserRouter([
         {
           path: "mySelectedClass/:id",
           element: <PrivateRoutes><Payment></Payment></PrivateRoutes>,
-          loader: ({params})=> fetch(`https://music-school-server-rho.vercel.app/selectedClass/${params.id}`)
+          loader: ({params})=> fetch(`https://music-school-server.onrender.com/selectedClass/${params.id}`)
         },
         {
           path: "paymentHistory",
