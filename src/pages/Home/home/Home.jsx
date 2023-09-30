@@ -4,6 +4,7 @@ import Banner from "../banner/Banner";
 import Contact from "../contact/Contact";
 import TopClasses from "../topClasses/TopClasses";
 import TopInstructors from "../topInstructors.jsx/TopInstructors";
+import Location from "../location/Location";
 
 const Home = () => {
 
@@ -24,7 +25,10 @@ const Home = () => {
 
             <TopInstructors></TopInstructors>
 
+            <Location />
+            
             <Contact></Contact>
+
 
         </div>
     );

@@ -18,14 +18,14 @@ const Contact = () => {
     }
 
     return (
-        <div className=" p-5">
+        <div className="mt-20 p-5">
 
-            <h3 className="text-4xl font-extrabold text-violet-500 text-center my-5">Contact US</h3>
+            <h3 className="text-xl lg:text-4xl font-extrabold text-violet-500 text-center my-5">Contact US</h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center items-center mt-0 gap-5">
                 <div className="w-full max-w-lg mx-auto shadow-lg shadow-cyan-500/50 rounded-2xl bg-base-100 order-2 md:order-1">
                     <form onSubmit={handleSend} className="card-body">
-                        <Bounce className="text-3xl text-center font-bold">
+                        <Bounce className="text-xl lg:text-2xl text-center font-bold">
                             Send Message!!
                         </Bounce>
                         <div className="form-control">

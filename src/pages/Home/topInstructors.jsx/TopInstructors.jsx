@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Marquee from "react-fast-marquee";
 
 const TopInstructors = () => {
 
@@ -14,21 +15,25 @@ const TopInstructors = () => {
     return (
         <div className="p-2 my-5">
 
-            <h2 className="text-4xl text-center my-5 text-violet-500 font-extrabold">Our Top Instructors</h2>
+            <h2 className="text-xl lg:text-4xl text-center my-5 text-violet-500 font-extrabold">Our Top Instructors</h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-                {
-                    instructors.slice(0, 6).map(teacher => <div key={teacher._id} className="card card-compact bg-base-100 shadow-lg shadow-orange-300/50">
+            <Marquee direction="right">
+                <div className="grid grid-cols-6 gap-5 p-4">
+                    {
+                        instructors.slice(0, 6).map(teacher => <div key={teacher._id} className="card card-compact bg-base-100 shadow-lg shadow-orange-300/50">
 
-                        <figure><img src={teacher.image} alt="Shoes" /></figure>
+                            <figure><img src={teacher.image} alt="instructor" className="w-60 mx-auto" /></figure>
 
-                        <div className="card-body">
-                            <h2 className="card-title">{teacher.name}</h2>
-                        </div>
+                            <div className="card-body">
+                                <h2 className="card-title">{teacher.name}</h2>
+                            </div>
 
-                    </div>)
-                }
-            </div>
+                        </div>)
+                    }
+                </div>
+            </Marquee>
+
+
 
         </div>
     );
