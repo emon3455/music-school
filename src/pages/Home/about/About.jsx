@@ -1,9 +1,8 @@
 
 import { Fade } from "react-awesome-reveal";
-
 const About = () => {
     return (
-        <div className="my-10  p-4">
+        <div id="about" className="my-10  p-4">
 
             <div className="grid grid-cols-1  md:grid-cols-2 justify-center items-center mt-0 gap-5" >
                 <div className="order-2 md:order-1">
@@ -19,7 +18,7 @@ const About = () => {
 
                     <p className=" mb-5 text-justify">
                         <span className="font-semibold">Our Mission:</span> <br />
-                         At the core of [Music School Name] is a simple yet profound mission: to provide exceptional music education that empowers individuals to reach their full musical potential. We strive to create a space where students of all ages and backgrounds can explore the world of music, develop their skills, and express themselves through the universal language of melody and rhythm.
+                        At the core of [Music School Name] is a simple yet profound mission: to provide exceptional music education that empowers individuals to reach their full musical potential. We strive to create a space where students of all ages and backgrounds can explore the world of music, develop their skills, and express themselves through the universal language of melody and rhythm.
                     </p>
 
 
@@ -35,6 +34,7 @@ const About = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 

@@ -2,7 +2,8 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
+import { Link as ScrollLink, scroller } from "react-scroll";
 
 const Navbar = () => {
 
@@ -41,26 +42,36 @@ const Navbar = () => {
             .catch(er => console.log(er))
     }
 
+    const scrollToElement = (element) => {
+        scroller.scrollTo(element, {
+          smooth: true,
+          offset: -70, // Adjust the offset as needed
+        });
+      };
+
     const navMenu = <>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/instructors"> Instructors </Link></li>
-        <li><Link to="/classes"> Classes </Link></li>
+        <li><RouterLink to="/">Home</RouterLink></li>
+        <li><ScrollLink to="about" smooth={true} offset={-70} duration={1500}>About</ScrollLink></li>
+        <li><RouterLink to="/instructors">Instructors</RouterLink></li>
+        <li><RouterLink to="/classes">Classes</RouterLink></li>
+        <li><ScrollLink to="TStudent" smooth={true} offset={-90} duration={1500}>Top Students</ScrollLink></li>
+        <li><ScrollLink to="contact" smooth={true} offset={-90} duration={1500}>Contact</ScrollLink></li>
         {
             user
                 ?
                 <>
-                    <li><Link to="/dashboard/home">Dashboard</Link></li>
+                    <li><RouterLink to="/dashboard/home">Dashboard</RouterLink></li>
                     <li><button onClick={handleLogout} className="bg-warning font-bold hover:bg-info">Logout</button></li>
                 </>
                 :
-                <li ><Link className="bg-warning hover:bg-info" to="/signin">Sign In</Link></li>
+                <li ><RouterLink className="bg-warning hover:bg-info" to="/signin">Sign In</RouterLink></li>
 
         }
 
     </>
 
     return (
-        <div className={`navbar mx-auto sticky top-0 bg-sky-200 ${theme=="light"?"bg-opacity-80":"bg-opacity-20"} z-20 w-full`}>
+        <div className={`navbar mx-auto sticky top-0 bg-sky-200 ${theme == "light" ? "bg-opacity-80" : "bg-opacity-20"} z-20 w-full`}>
             <div className="navbar-start lg:w-1/3">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost xl:hidden">

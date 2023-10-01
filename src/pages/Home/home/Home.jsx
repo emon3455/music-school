@@ -5,29 +5,32 @@ import Contact from "../contact/Contact";
 import TopClasses from "../topClasses/TopClasses";
 import TopInstructors from "../topInstructors.jsx/TopInstructors";
 import Location from "../location/Location";
+import TopStudents from "../topStudents/TopStudents";
 
 const Home = () => {
 
     
 
     return (
-        <div>
+        <div id="home">
 
             <Helmet>
                 <title>Music Scholling | Home</title>
             </Helmet>
 
-            <Banner></Banner>
+            <Banner/>
 
-            <About></About>
+            <About/>
 
-            <TopClasses></TopClasses>
+            <TopClasses/>
 
-            <TopInstructors></TopInstructors>
+            <TopInstructors/>
+
+            <TopStudents />
 
             <Location />
             
-            <Contact></Contact>
+            <Contact />
 
 
         </div>

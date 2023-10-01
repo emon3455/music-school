@@ -14,7 +14,7 @@ const Instructors = () => {
     }, [])
 
     return (
-        <div className="p-2 my-5">
+        <div id="instructors" className="p-2 my-5">
             <Helmet>
                 <title>Music Scholling | Instructors</title>
             </Helmet>
