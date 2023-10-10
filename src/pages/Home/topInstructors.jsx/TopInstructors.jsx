@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
+import { Link } from "react-router-dom";
 
 const TopInstructors = () => {
 
@@ -33,7 +34,13 @@ const TopInstructors = () => {
                 </div>
             </Marquee>
 
-
+            <div className="text-center mt-5">
+                <Link to="/instructors">
+                    <button className="btn btn-primary btn-sm">
+                        View More
+                    </button>
+                </Link>
+            </div>
 
         </div>
     );

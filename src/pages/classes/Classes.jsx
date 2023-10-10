@@ -99,7 +99,7 @@ const Classes = () => {
                             </div>
 
                             <div className="card-actions justify-end">
-                                <button onClick={() => handleAddToSelectedClass(classItem)} className="btn btn-info font-bold" disabled={classItem.availableSeats == 0 || isAdmin || isInstructor}>Select</button>
+                                <button onClick={() => handleAddToSelectedClass(classItem)} className="btn btn-info font-bold btn-sm" disabled={classItem.availableSeats == 0 || isAdmin || isInstructor}>Select</button>
                             </div>
                         </div>
 

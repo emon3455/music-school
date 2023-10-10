@@ -1,5 +1,6 @@
 import Marquee from "react-fast-marquee";
 import useClasses from "../../../hooks/useClasses";
+import { Link } from "react-router-dom";
 
 const TopClasses = () => {
 
@@ -27,6 +28,14 @@ const TopClasses = () => {
                     }
                 </div>
             </Marquee>
+
+            <div className="text-center mt-5">
+                <Link to="/classes">
+                    <button className="btn btn-primary btn-sm">
+                        View More
+                    </button>
+                </Link>
+            </div>
 
         </div>
     );

@@ -52,8 +52,6 @@ const Navbar = () => {
     const navMenu = <>
         <li><RouterLink to="/">Home</RouterLink></li>
         <li><ScrollLink to="about" smooth={true} offset={-70} duration={1500}>About</ScrollLink></li>
-        <li><RouterLink to="/instructors">Instructors</RouterLink></li>
-        <li><RouterLink to="/classes">Classes</RouterLink></li>
         <li><ScrollLink to="TStudent" smooth={true} offset={-90} duration={1500}>Top Students</ScrollLink></li>
         <li><ScrollLink to="contact" smooth={true} offset={-90} duration={1500}>Contact</ScrollLink></li>
         {
@@ -77,7 +75,7 @@ const Navbar = () => {
                     <label tabIndex={0} className="btn btn-ghost xl:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
-                    <ul tabIndex={0} className="menu  space-y-2 menu-compact dropdown-content mt-3 p-2 shadow-lg shadow-indigo-500/50 bg-base-100 rounded-box w-52">
+                    <ul tabIndex={0} className="menu text-sm space-y-2 menu-compact dropdown-content mt-3 p-2 shadow-lg shadow-indigo-500/50 bg-base-100 rounded-box w-52">
                         {navMenu}
                     </ul>
 
@@ -86,7 +84,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end lg:w-2/3">
                 <div className="hidden xl:flex">
-                    <ul className="menu space-x-2 text-lg menu-horizontal px-1">
+                    <ul className="menu space-x-2 text-sm menu-horizontal px-1">
                         {navMenu}
                     </ul>
                 </div>
